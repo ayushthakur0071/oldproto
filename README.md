@@ -1,20 +1,12 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Smart Food Analyzer
 
-# Run and deploy your AI Studio app
+This is a food analysis web application built using React + Vite.
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/16185137-cc1b-483e-8d19-bdaa6f2126b2
+## Features
+- Image-based food detection (simulated)
+- Shelf life estimation
+- Freshness scoring
 
 ## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+npm install  
+npm run dev
