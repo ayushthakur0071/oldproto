@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 
-export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/oldproto/' : '/',  // 👈 CRITICAL FIX
+export default defineConfig({
+  base: '/oldproto/',   // 👈 MUST be EXACT
 
   plugins: [react(), tailwindcss()],
   resolve: {
@@ -12,7 +12,4 @@ export default defineConfig(({ mode }) => ({
       '@': path.resolve(__dirname, '.'),
     },
   },
-  server: {
-    hmr: process.env.DISABLE_HMR !== 'true',
-  },
-}));
+});
