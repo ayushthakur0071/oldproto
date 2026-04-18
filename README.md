@@ -1,12 +1,12 @@
 # Smart Food Analyzer
 
-This is a food analysis web application built using React + Vite.
+A web app for analyzing food images (prototype version).
 
 ## Features
-- Image-based food detection (simulated)
+- Image analysis (simulated)
 - Shelf life estimation
 - Freshness scoring
 
-## Run Locally
-npm install  
+## Run
+npm install
 npm run dev

@@ -45,30 +45,31 @@ export const Scan = () => {
   const analyzeImage = async () => {
     if (!image) return;
     setAnalyzing(true);
-    
-    try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
-      const base64Data = image.split(',')[1];
-      
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: [
-          {
-            parts: [
-              { text: "Identify the food item(s) in this image. For each, give Name, Category, Estimated Shelf Life (in days), and a freshness rating (0-100). Format as JSON." },
-              { inlineData: { data: base64Data, mimeType: "image/jpeg" } }
-            ]
-          }
-        ],
-        config: {
-          responseMimeType: "application/json"
-        }
-      });
 
-      const parsedResult = JSON.parse(response.text);
-      setResult(parsedResult);
+    try {
+      // Simulate delay (like real AI)
+      await new Promise((res) => setTimeout(res, 1200));
+
+      // Fake AI response (same structure as before)
+      const mockResult = [
+        {
+          name: "Apple",
+          category: "Fruit",
+          estimatedShelfLife: 7,
+          freshness: 85
+        },
+        {
+          name: "Bread",
+          category: "Bakery",
+          estimatedShelfLife: 3,
+          freshness: 60
+        }
+      ];
+
+      setResult(mockResult);
+
     } catch (error) {
-      console.error("AI Analysis failed:", error);
+      console.error("Mock analysis failed:", error);
     } finally {
       setAnalyzing(false);
     }
@@ -85,7 +86,7 @@ export const Scan = () => {
       <header className="text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
           <Sparkles size={14} />
-          Powered by Gemini AI
+          AI Powered
         </div>
         <h1 className="text-4xl font-bold text-white tracking-tight mb-2">AI Food Scanner</h1>
         <p className="text-slate-400">Scan your grocery receipt or food items to automatically update your inventory.</p>
@@ -165,7 +166,7 @@ export const Scan = () => {
                 <Sparkles className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-emerald-500 animate-pulse" size={24} />
               </div>
               <div className="space-y-2">
-                <p className="text-white font-bold text-lg">Gemini is thinking...</p>
+                <p className="text-white font-bold text-lg">AI is thinking...</p>
                 <p className="text-slate-500 text-sm">Identifying items and estimating shelf life</p>
               </div>
             </div>
