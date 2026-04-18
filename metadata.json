@@ -1,0 +1,9 @@
+{
+  "name": "Intelli Food",
+  "description": "AI-Based Food Waste Reduction & Donation System. Manage inventory, get AI recipe suggestions, and donate surplus food with location-based services.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
