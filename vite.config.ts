@@ -4,7 +4,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/oldproto/' : '/',
+  base: mode === 'production' ? '/oldproto/' : '/',  // 👈 CRITICAL FIX
 
   plugins: [react(), tailwindcss()],
   resolve: {
